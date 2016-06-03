@@ -1,3 +1,4 @@
+
 var myCenter = new L.LatLng(52.48722, 13.4249);
 var map = new L.Map('map', {center: myCenter, zoom: 17});
 var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
@@ -5,7 +6,7 @@ var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{
     }).addTo(map);
 var marker = new L.Marker(myCenter);
     map.addLayer(marker);
-    marker.bindPopup("<p>I am a Marker </p>");
+    marker.bindPopup("<b>I am a Marker </b><br>I could also be a statue");
     
 var polygon = L.polygon([
       [52.48639, 13.42393],
@@ -16,7 +17,7 @@ var polygon = L.polygon([
     fillColor: '#f03',
     fillOpacity: 0.1}).addTo(map);
 
-var polygonPopup = polygon.bindPopup("<b>Hello!</b><br>I am the Hermannplatz").openPopup;
+var polygonPopup = polygon.bindPopup("<b>Hello I am a polygon!</b><br>and I am the Hermannplatz").openPopup;
 
 var latLngPopup = L.popup();
 function onMapClick(e) {
@@ -52,7 +53,7 @@ var geojsonFeature = {
   "properties": {
     "name": "U-bahn Hermannplatz",
     "owner": "Land Berlin",
-    "popupContent": "U8: Hermannplatz"
+    "popupContent": "<b>Hi,I am a Marker converted to a circleMarker</b><br>Here is the Ubhf Hermannplatz (U8)"
   }
 };
  
