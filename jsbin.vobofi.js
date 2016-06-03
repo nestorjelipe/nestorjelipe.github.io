@@ -53,7 +53,7 @@ var geojsonFeature = {
   "properties": {
     "name": "U-bahn Hermannplatz",
     "owner": "Land Berlin",
-    "popupContent": "<b>Hi,I am a Marker converted to a circleMarker</b><br>Here is the Ubhf Hermannplatz (U8)"
+    "popupContent": "<b>Hi,I am a geoJson-Feature converted to a circle-Marker</b><br>Here is the Ubhf Hermannplatz (U8)"
   }
 };
  
