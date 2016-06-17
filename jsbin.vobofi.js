@@ -12,7 +12,7 @@ var myCenter = new L.LatLng(52.48722, 13.4249);
 var map = new L.Map('map', {
   center: myCenter,
   zoom: 17,
-  layers: [positron, geojsonLayer]
+  layers: [nasatron, geojsonLayer]
 });
 
 var baseMaps = {
