@@ -22,7 +22,8 @@ var baseMaps = {
 };
 
 var overlayMaps = {
-  "Marker": geojsonLayer
+  "Marker": geojsonLayer,
+  "Polygon": polygonLayer
 };
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
@@ -39,7 +40,9 @@ var polygon = L.polygon([
       [52.4878,13.4251]
     ], {color: 'blue',
     fillColor: '#f03',
-    fillOpacity: 0.1}).addTo(map);
+    fillOpacity: 0.1});
+
+var polygonLayer = L.layerGroup([polygon]);
 
 var polygonPopup = polygon.bindPopup("<b>Hello I am a polygon!</b><br>and I am the Hermannplatz").openPopup;
 
