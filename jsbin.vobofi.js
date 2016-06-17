@@ -1,10 +1,4 @@
 
-var myCenter = new L.LatLng(52.48722, 13.4249);
-var map = new L.Map('map', {
-  center: myCenter,
-  zoom: 17,
-  layers: [positron, geojsonLayer]
-});
 
 var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
@@ -12,6 +6,14 @@ var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{
 var nasatron = L.tileLayer("http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
   attribution: 'Search<a href="http://www.mapquest.com/" target="_blank"><img src="http://developer.mapquest.com/content/osm/mq_logo.png"></a>, NASA/JPL, Caltech, USDA',
   subdomains: '1234'
+});
+
+
+var myCenter = new L.LatLng(52.48722, 13.4249);
+var map = new L.Map('map', {
+  center: myCenter,
+  zoom: 17,
+  layers: [positron, geojsonLayer]
 });
 
 var baseMaps = {
@@ -84,5 +86,5 @@ var geojsonLayer = L.geoJson( geojsonFeature,{
     return L.circleMarker(latlng, geojsonMarkerOptions);
   },
   onEachFeature: onEachFeature
-}).addTo(map);
+});
 geojsonLayer.addData(geojsonFeature);
