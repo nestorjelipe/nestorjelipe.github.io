@@ -1,9 +1,31 @@
 
 var myCenter = new L.LatLng(52.48722, 13.4249);
-var map = new L.Map('map', {center: myCenter, zoom: 17});
+var map = new L.Map('map', {
+  center: myCenter,
+  zoom: 17,
+  layers: [positron, geojsonLayer]
+});
+
 var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);
+var nasatron = L.tileLayer("http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg", {
+  attribution: 'Search<a href="http://www.mapquest.com/" target="_blank"><img src="http://developer.mapquest.com/content/osm/mq_logo.png"></a>, NASA/JPL, Caltech, USDA',
+  subdomains: '1234'
+});
+
+var baseMaps = {
+  "Grayscale": positron,
+  "Nasa": nasatron
+};
+
+var overlayMaps = {
+  "Marker": geojsonLayer
+};
+
+L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+
 var marker = new L.Marker(myCenter);
     map.addLayer(marker);
     marker.bindPopup("<b>I am a Marker </b><br>I could also be a statue");
@@ -13,7 +35,7 @@ var polygon = L.polygon([
       [52.48622, 13.42442],
       [52.48763, 13.4256],
       [52.4878,13.4251]
-    ], {color: 'red',
+    ], {color: 'blue',
     fillColor: '#f03',
     fillOpacity: 0.1}).addTo(map);
 
