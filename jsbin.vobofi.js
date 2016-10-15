@@ -44,8 +44,8 @@ L.control.panelLayers(baseLayers, null, {
           lngRad = latlng.lng * Math.PI / 180;
         return {
           z: zoom,
-          x: (latlng.lng + 180) / 360 * (1<<zoom),
-          y: (1 - Math.log(Math.tan(lngRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * (1<<zoom)
+          x: parseInt(Math.floor( (latlng.lng + 180) / 360 * (1<<zoom) )),
+          y: parseInt(Math.floor( (1 - Math.log(Math.tan(lngRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * (1<<zoom) ))
       }
     }
       
