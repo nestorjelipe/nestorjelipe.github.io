@@ -1,5 +1,5 @@
 
-var myCenter = new L.LatLng(52.47, 13.42);
+var myCenter = new L.LatLng(52.477, 13.422);
 
 var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 15, maxBounds: L.latLngBounds([[52.3068, 12.84302],[52.69636, 13.97736]]).pad(0.5)});
 
@@ -57,13 +57,13 @@ L.control.panelLayers(baseLayers, overlayers, {
       }
     }
     
-/*    var xyzNEW = getXYZnew(map.getCenter(), map.getZoom());
-    var urlNEW = item.layer.getTileUrl( xyzNEW );  */
+    var xyzNEW = getXYZnew(map.getCenter(), map.getZoom());
+    //var urlNEW = item.layer.getTileUrl( xyzNEW );  
     var xyz = getXYZ(map.getCenter(), map.getZoom() );
     var url = item.layer.getTileUrl( xyz );
 
     console.log(xyz);
-    //console.log(xyzNEW);
+    console.log(xyzNEW);
     console.log(url);
     //console.log(urlNEW);
 
