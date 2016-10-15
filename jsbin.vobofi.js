@@ -40,8 +40,8 @@ L.control.panelLayers(baseLayers, null, {
   buildItem: function(item) {
 
     function getXYZ(latlng, zoom) {
-      var latRad = latlng.lat * Math.PI / 180,
-          lngRad = latlng.lng * Math.PI / 180;
+      var latRad = latlng.lat,
+          lngRad = latlng.lng;
         return {
           z: zoom,
           x: parseInt(Math.floor( (latlng.lng + 180) / 360 * (1<<zoom) )),
