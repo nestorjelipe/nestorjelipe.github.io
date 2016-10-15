@@ -1,6 +1,40 @@
 
 var myCenter = new L.LatLng(52.48722, 13.4249);
+
 var map = new L.Map('map', {center: myCenter, zoom: 17});
+
+var baselayers = [
+  {
+    active: true,
+    name: "Light Map",
+    layer: L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+      });
+  },
+  {
+    name: "Satelite Map",
+    layer: L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmVzdG9yamVsaXBlIiwiYSI6ImNpb3dsdW4wbTAwN2t3ZGtqMDd2cGtlbjIifQ.v-kTLPHIgkXuobgi8kbZRw', {
+      attribution: '&copy; <a href="https://www.digitalglobe.com/">Digital Globe</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>' ,
+      minZoom: 2,
+      maxZoom: 19
+    });
+  }
+];
+
+var overlayers = [
+  {
+    name: "Marker",
+    icon: '<i class="icon icon-water"></i>',
+    layer: L.geoJson(WaterGeoJSON)
+  }
+];
+
+var panelLayers = new L.Control.PanelLayers(baselayers, overLayers, {
+  collapsed: true
+});
+
+map.addControl(panelLayers);
+
 var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);
