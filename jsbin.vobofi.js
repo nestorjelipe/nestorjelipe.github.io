@@ -29,7 +29,7 @@ var baselayers = [
   }
 ];*/
 
-L.Control.PanelLayers(baselayers, null, {
+L.control.panelLayers(baselayers, null, {
   buildItem: function(item) {
 
     function getXYZ(latlng, zoom) {
