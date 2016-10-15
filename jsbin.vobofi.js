@@ -1,5 +1,5 @@
 
-var myCenter = new L.LatLng(41.89, 12.51);
+var myCenter = new L.LatLng(41.8919, 12.5113);
 
 var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 17, maxBounds: L.latLngBounds([[42.41281,12.28821],[42.5589,12.63805]]).pad(0.5)});
 
