@@ -52,8 +52,8 @@ L.control.panelLayers(baseLayers, null, {
     function getXYZnew(latlng, zoom) {
       return {
         z: zoom,
-        x: latlng.lat,
-        y: latlng.lng
+        x: parseInt(latlng.lat),
+        y: parseInt(latlng.lng)
       }
     }
     
