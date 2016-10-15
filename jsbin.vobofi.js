@@ -53,6 +53,7 @@ L.control.panelLayers(baseLayers, null, {
       url = item.layer.getTileUrl( xyz );
 
     console.log(xyz);
+    console.lof(url);
       
     var node = L.DomUtil.create('div','panel-thumb');
       
