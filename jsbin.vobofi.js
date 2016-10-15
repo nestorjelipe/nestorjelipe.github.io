@@ -82,9 +82,10 @@ map.on('click', function(e) {
         y: parseInt(Math.floor( (1 - Math.log(Math.tan(toRad(latlng.lat)) + 1 / Math.cos(toRad(latlng.lat))) / Math.PI) / 2 * (1<<zoom) ))
     }
   }
-  //var url = getTileURL(e.latlng.lat, e.latlng.lng, map.getZoom());
+
+  var url = getTileURL(e.latlng.lat, e.latlng.lng, map.getZoom());
   var xyz = getXYZ(e.latlng, map.getZoom());
-  var url = layer.getTileUrl( xyz );
+  //var url = layer.getTileUrl( xyz );
 
   console.log(url);
 });
