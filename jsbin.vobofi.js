@@ -40,7 +40,6 @@ L.control.panelLayers(baseLayers, null, {
   buildItem: function(item) {
 
     function getXYZ(latlng, zoom) {
-      console.log(latlng.lat)
       var latRad = latlng.lat * Math.PI / 180,
           lngRad = latlng.lng * Math.PI / 180;
         return {
@@ -50,7 +49,7 @@ L.control.panelLayers(baseLayers, null, {
       }
     }
 
-    function getTileURL(latlng, zoom) {
+    function getXYZnew(latlng, zoom) {
       return {
         z: zoom,
         x: latlng.lat,
@@ -58,9 +57,10 @@ L.control.panelLayers(baseLayers, null, {
       }
     }
     
-    var xyzNEW = getTileURL(map.getCenter(), map.getZoom());  
+    var xyzNEW = getXYZnew(map.getCenter(), map.getZoom());  
     var xyz = getXYZ(map.getCenter(), map.getZoom() );
     var url = item.layer.getTileUrl( xyz );
+    var url = item.layer.getTileUrl( xyzNEW );
 
     console.log(xyzNEW);
     console.log(xyz);
