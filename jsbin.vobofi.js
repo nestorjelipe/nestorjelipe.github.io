@@ -52,8 +52,8 @@ L.control.panelLayers(baseLayers, null, {
     function getXYZnew(latlng, zoom) {
       return {
         z: zoom,
-        x: parseInt(latlng.lat),
-        y: parseInt(latlng.lng)
+        x: parseInt(latlng.lat) * 1000,
+        y: parseInt(latlng.lng) + 1000
       }
     }
     
@@ -71,7 +71,7 @@ L.control.panelLayers(baseLayers, null, {
 
     console.log(node);
       
-    node.style.background = "url('"+urlNEW+"') no-repeat top left";
+    node.style.background = "url('"+url+"') no-repeat top left";
     node.innerHTML = item.name;
 
     return node;
