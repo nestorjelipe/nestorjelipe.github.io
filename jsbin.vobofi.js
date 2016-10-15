@@ -1,7 +1,7 @@
 
 var myCenter = new L.LatLng(52.477, 13.422);
 
-var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 16, maxBounds: L.latLngBounds([[52.3068, 12.84302],[52.69636, 13.97736]]).pad(0.5)});
+var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 15, maxBounds: L.latLngBounds([[52.3068, 12.84302],[52.69636, 13.97736]]).pad(0.5)});
 
 var baseLayers = [
   {
@@ -21,13 +21,13 @@ var baseLayers = [
   }
 ];
 
-/*var overlayers = [
+var overlayers = [
   {
     name: "Marker",
     icon: '<i class="icon icon-water"></i>',
     layer: L.geoJson(marker)
   }
-];*/
+];
 
 /*var panelLayers = new L.Control.PanelLayers(baseLayers, null, {
   collapsed: true
@@ -35,7 +35,7 @@ var baseLayers = [
 
 map.addControl(panelLayers);*/
 
-L.control.panelLayers(baseLayers, null, {
+L.control.panelLayers(baseLayers, overlayers, {
   collapsed: true,
   buildItem: function(item) {
 
