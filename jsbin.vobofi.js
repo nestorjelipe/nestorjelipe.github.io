@@ -50,7 +50,6 @@ L.control.panelLayers(baseLayers, null, {
     }
       
     var xyz = getXYZ(map.getCenter(), map.getZoom() ),
-      url = item.layer.getTileUrl( xyz );
 
     console.log(xyz);
     console.log(url);
@@ -61,6 +60,8 @@ L.control.panelLayers(baseLayers, null, {
     node.innerHTML = item.name;
 
     return node;
+    console.log(node);
+    console.log(node.style.backgroung);
   }
 }).addTo(map);
 
