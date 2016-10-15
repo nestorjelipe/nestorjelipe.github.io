@@ -29,9 +29,52 @@ var overlayers = [
   }
 ];
 
-var panelLayers = new L.Control.PanelLayers(baselayers, overlayers);
+var panelLayers = new L.Control.PanelLayers(baselayers, null, {
+    buildItem: function(item) {
 
-map.addControl(panelLayers);
+      function getXYZ(latlng, zoom) {
+        var latRad = latlng.lat * Math.PI / 180,
+          lngRad = latlng.lng * Math.PI / 180;
+          return {
+            z: zoom,
+            x: parseInt(Math.floor( (latlng.lng + 180) / 360 * (1<<zoom) )),
+            y: parseInt(Math.floor( (1 - Math.log(Math.tan(lngRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * (1<<zoom) ))
+        }
+      }
+      
+      var xyz = getXYZ(map.getCenter(), map.getZoom() ),
+        url = item.layer.getTileUrl( xyz );
+      
+      var node = L.DomUtil.create('div','panel-thumb');
+      
+      node.style.background = "url('"+url+"') no-repeat top left";
+      node.innerHTML = item.name;
+
+      return node;
+    }
+  }).addTo(map);
+
+  map.on('click', function(e) {
+
+    var layer = baselayers[0].layer;
+
+    function getXYZ(latlng, zoom) {
+      function toRad(n) {
+        return n * Math.PI / 180;
+      }
+        return {
+          z: zoom,
+          x: parseInt(Math.floor( (latlng.lng + 180) / 360 * (1<<zoom) )),
+          y: parseInt(Math.floor( (1 - Math.log(Math.tan(toRad(latlng.lat)) + 1 / Math.cos(toRad(latlng.lat))) / Math.PI) / 2 * (1<<zoom) ))
+      }
+    }
+    //var url = getTileURL(e.latlng.lat, e.latlng.lng, map.getZoom());
+    var xyz = getXYZ(e.latlng, map.getZoom());
+    var url = layer.getTileUrl( xyz );
+
+    console.log(url)
+  });
+
 
 var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
