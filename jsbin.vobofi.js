@@ -29,7 +29,7 @@ var baseLayers = [
   }
 ];*/
 
-var panelLayers = new L.Control.PanelLayers(baseLayers, {
+var panelLayers = new L.Control.PanelLayers(baseLayers, null, {
   collapsed: true
 });
 
