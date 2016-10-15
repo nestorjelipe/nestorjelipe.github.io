@@ -65,7 +65,7 @@ L.control.panelLayers(baseLayers, overlayers, {
     console.log(xyz);
     console.log(xyzNEW);
     console.log(url);
-    console.log(urlNEW);
+    //console.log(urlNEW);
 
     var node = L.DomUtil.create('div','panel-thumb');
 
