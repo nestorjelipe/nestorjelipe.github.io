@@ -29,7 +29,11 @@ var baselayers = [
   }
 ];*/
 
-L.control.panelLayers(baselayers, null, {
+var panelLayers = new L.Control.PanelLayers(baseLayers);
+
+map.addControl(panelLayers);
+
+/*L.control.panelLayers(baselayers, null, {
   buildItem: function(item) {
 
     function getXYZ(latlng, zoom) {
@@ -52,7 +56,7 @@ L.control.panelLayers(baselayers, null, {
 
     return node;
   }
-}).addTo(map);
+}).addTo(map);*/
 
 map.on('click', function(e) {
 
