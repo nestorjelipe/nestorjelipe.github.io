@@ -78,10 +78,10 @@ var panelLayers = new L.Control.PanelLayers(baselayers, null, {
 
 /*var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-    }).addTo(map);
+    }).addTo(map);*/
 var marker = new L.Marker(myCenter);
     map.addLayer(marker);
-    marker.bindPopup("<b>I am a Marker </b><br>I could also be a statue");*/
+    marker.bindPopup("<b>I am a Marker </b><br>I could also be a statue");
     
 var polygon = L.polygon([
       [52.48639, 13.42393],
