@@ -9,7 +9,7 @@ var baselayers = [
     name: "Light Map",
     layer: L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-      });
+      })
   },
   {
     name: "Satelite Map",
@@ -17,7 +17,7 @@ var baselayers = [
       attribution: '&copy; <a href="https://www.digitalglobe.com/">Digital Globe</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>' ,
       minZoom: 2,
       maxZoom: 19
-    });
+    })
   }
 ];
 
