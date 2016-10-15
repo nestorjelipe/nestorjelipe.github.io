@@ -1,7 +1,7 @@
 
 var myCenter = new L.LatLng(52.48722, 13.4249);
 
-var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 17});
+var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 15});
 
 var baseLayers = [
   {
@@ -53,7 +53,7 @@ L.control.panelLayers(baseLayers, null, {
       url = item.layer.getTileUrl( xyz );
 
     console.log(xyz);
-    console.lof(url);
+    console.log(url);
       
     var node = L.DomUtil.create('div','panel-thumb');
       
