@@ -58,7 +58,7 @@ L.control.panelLayers(baseLayers, overlayers, {
     }
     
     var xyzNEW = getXYZnew(map.getCenter(), map.getZoom());
-    //var urlNEW = item.layer.getTileUrl( xyzNEW );  
+    var urlNEW = item.layer.getTileUrl( xyzNEW );  
     var xyz = getXYZ(map.getCenter(), map.getZoom() );
     var url = item.layer.getTileUrl( xyz );
 
