@@ -29,7 +29,7 @@ var overlayers = [
   }
 ];
 
-var panelLayers = new L.Control.PanelLayers(baselayers, overLayers, {
+var panelLayers = new L.Control.PanelLayers(baselayers, overlayers, {
   collapsed: true
 });
 
