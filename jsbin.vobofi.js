@@ -25,7 +25,7 @@ var overlayers = [
   {
     name: "Marker",
     icon: '<i class="icon icon-water"></i>',
-    layer: L.geoJson(WaterGeoJSON)
+    layer: L.geoJson(marker)
   }
 ];
 
