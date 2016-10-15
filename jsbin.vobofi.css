@@ -1,4 +1,16 @@
 #map {
-      width:400px;
-      height:400px;
+      width:100vh;
+      height:100vh;
     };
+
+
+.leaflet-panel-layers-item span {
+	display: block;
+	background: #fff:
+}
+.panel-thumb {
+	height: 50px;
+	width: 150px;
+	float: left;
+	cursor: pointer;
+}
