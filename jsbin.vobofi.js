@@ -36,6 +36,7 @@ var baseLayers = [
 map.addControl(panelLayers);*/
 
 L.control.panelLayers(baseLayers, null, {
+  collapsed: true,
   buildItem: function(item) {
 
     function getXYZ(latlng, zoom) {
@@ -50,6 +51,8 @@ L.control.panelLayers(baseLayers, null, {
       
     var xyz = getXYZ(map.getCenter(), map.getZoom() ),
       url = item.layer.getTileUrl( xyz );
+
+    console.log(xyz);
       
     var node = L.DomUtil.create('div','panel-thumb');
       
