@@ -1,7 +1,7 @@
 
 var myCenter = new L.LatLng(41.8, 12.5);
 
-var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 17, maxBounds: L.latLngBounds([[42.41281,11.28821],[42.5589,11.63805]]).pad(0.5)});
+var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 19, maxBounds: L.latLngBounds([[42.41281,11.28821],[42.5589,11.63805]]).pad(0.5)});
 
 var baseLayers = [
   {
@@ -93,9 +93,9 @@ map.on('click', function(e) {
     }
   }
 
-  var url = getTileURL(e.latlng.lat, e.latlng.lng, map.getZoom());
+  //var url = getTileURL(e.latlng.lat, e.latlng.lng, map.getZoom());
   var xyz = getXYZ(e.latlng, map.getZoom());
-  //var url = layer.getTileUrl( xyz );
+  var url = layer.getTileUrl( xyz );
 
   console.log(url);
 });
