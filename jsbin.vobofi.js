@@ -57,15 +57,15 @@ L.control.panelLayers(baseLayers, null, {
       }
     }
     
-    var xyzNEW = getXYZnew(map.getCenter(), map.getZoom());  
+    var xyzNEW = getXYZnew(map.getCenter(), map.getZoom());
+    //var urlNEW = item.layer.getTileUrl( xyzNEW );  
     var xyz = getXYZ(map.getCenter(), map.getZoom() );
     var url = item.layer.getTileUrl( xyz );
-    var urlNEW = item.layer.getTileUrl( xyzNEW );
 
     console.log(xyz);
     console.log(xyzNEW);
     console.log(url);
-    console.log(urlNEW);
+    //console.log(urlNEW);
 
     var node = L.DomUtil.create('div','panel-thumb');
 
