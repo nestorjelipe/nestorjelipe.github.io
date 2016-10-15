@@ -58,7 +58,7 @@ L.control.panelLayers(baseLayers, null, {
       }
     }
     
-    var url = getTileURL(latlng.lat, latlng.lng, map.getZoom());  
+    var url = getTileURL(map.getCenter(), map.getZoom());  
     var xyz = getXYZ(map.getCenter(), map.getZoom() );
     // url = item.layer.getTileUrl( xyz );
 
