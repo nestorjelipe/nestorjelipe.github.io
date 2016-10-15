@@ -1,7 +1,7 @@
 
 var myCenter = new L.LatLng(52.48722, 13.4249);
 
-var map = new L.Map('map', {center: myCenter, zoom: 17});
+var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 17});
 
 var baselayers = [
   {
@@ -29,7 +29,7 @@ var baselayers = [
   }
 ];*/
 
-L.Control.PanelLayers(baselayers, null, {
+L.control.panelLayers(baselayers, null, {
   buildItem: function(item) {
 
     function getXYZ(latlng, zoom) {
