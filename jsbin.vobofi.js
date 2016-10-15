@@ -49,9 +49,17 @@ L.control.panelLayers(baseLayers, null, {
           y: parseInt(Math.floor( (1 - Math.log(Math.tan(lngRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * (1<<zoom) ))
       }
     }
+
+    function getTileURL(latlng, zoom) {
+      return {
+        z: zoom,
+        x: latlng.lat,
+        y: latlng.lng
+      }
+    }
     
-    var url = getTileURL(item.latlng.lat, item.latlng.lng, map.getZoom());  
-    var xyz = getXYZ(map.getCenter(), map.getZoom() )
+    var url = getTileURL(latlng.lat, latlng.lng, map.getZoom());  
+    var xyz = getXYZ(map.getCenter(), map.getZoom() );
     // url = item.layer.getTileUrl( xyz );
 
     console.log(xyz);
