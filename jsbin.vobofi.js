@@ -52,20 +52,20 @@ L.control.panelLayers(baseLayers, null, {
     function getXYZnew(latlng, zoom) {
       return {
         z: zoom,
-        x: latlng.lat,
-        y: latlng.lng
+        x: parseInt(latlng.lat),
+        y: parseInt(latlng.lng)
       }
     }
     
     var xyzNEW = getXYZnew(map.getCenter(), map.getZoom());
-    //var urlNEW = item.layer.getTileUrl( xyzNEW );  
+    var urlNEW = item.layer.getTileUrl( xyzNEW );  
     var xyz = getXYZ(map.getCenter(), map.getZoom() );
     var url = item.layer.getTileUrl( xyz );
 
     console.log(xyz);
     console.log(xyzNEW);
     console.log(url);
-    //console.log(urlNEW);
+    console.log(urlNEW);
 
     var node = L.DomUtil.create('div','panel-thumb');
 
