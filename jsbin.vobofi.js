@@ -3,7 +3,7 @@ var myCenter = new L.LatLng(52.48722, 13.4249);
 
 var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 17});
 
-var baselayers = [
+var baseLayers = [
   {
     name: "Light Map",
     layer: L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
