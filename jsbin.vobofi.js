@@ -1,9 +1,30 @@
 
 var myCenter = new L.LatLng(52.48722, 13.4249);
-var map = new L.Map('map', {center: myCenter, zoom: 17});
+
+var map = new L.Map('map', {center: myCenter, zoom: 16});
+
+var baselayers = [
+  {
+  active: true,
+  name: "Open Street Map",
+  layer: L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png'),
+  },
+  {
+    name: "Landscape",
+    layer: L.tileLayer('http://{s}.tile3.opencyclemap.org/landscape/{z}/{x}/{y}.png')
+  }
+];
+
 var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);
+
+var satelitemap = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmVzdG9yamVsaXBlIiwiYSI6ImNpb3dsdW4wbTAwN2t3ZGtqMDd2cGtlbjIifQ.v-kTLPHIgkXuobgi8kbZRw', {
+      attribution: '&copy; <a href="https://www.digitalglobe.com/">Digital Globe</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>' ,
+      minZoom: 2,
+      maxZoom: 19
+    });
+
 var marker = new L.Marker(myCenter);
     map.addLayer(marker);
     marker.bindPopup("<b>I am a Marker </b><br>I could also be a statue");
