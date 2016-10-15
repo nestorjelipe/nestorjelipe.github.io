@@ -70,7 +70,7 @@ L.control.panelLayers(baseLayers, null, {
     var node = L.DomUtil.create('div','panel-thumb');
 
     console.log(node);
-    console.log(node.style.background);
+    console.log("background: " + node.style.background);
       
     node.style.background = "url('"+url+"') no-repeat top left";
     node.innerHTML = item.name;
