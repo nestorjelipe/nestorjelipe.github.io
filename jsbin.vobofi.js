@@ -58,12 +58,12 @@ L.control.panelLayers(baseLayers, null, {
       }
     }
     
-    var xyz = getTileURL(map.getCenter(), map.getZoom());  
-    var xyzOld = getXYZ(map.getCenter(), map.getZoom() );
+    var xyzNEW = getTileURL(map.getCenter(), map.getZoom());  
+    var xyz = getXYZ(map.getCenter(), map.getZoom() );
     var url = item.layer.getTileUrl( xyz );
 
+    console.log(xyzNEW);
     console.log(xyz);
-    console.log(xyzOld);
       
     var node = L.DomUtil.create('div','panel-thumb');
 
