@@ -28,6 +28,7 @@ var baseLayers = [
 var overlayers = [
   {
     name: "Marker",
+    icon: '<i class="icon icon-water"></i>',
     layer: marker
   }
 ];
@@ -116,6 +117,8 @@ map.on('click', function(e) {
 /*var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);*/
+
+
     
 var polygon = L.polygon([
       [52.48639, 13.42393],
