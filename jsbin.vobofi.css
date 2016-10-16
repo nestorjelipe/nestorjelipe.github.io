@@ -9,6 +9,8 @@
 	background: #fff:
 }
 .panel-thumb {
+	font-weight: bold;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 	margin-top: 5px;
 	height: 50px;
 	width: 150px;
