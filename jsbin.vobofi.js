@@ -28,7 +28,7 @@ var baseLayers = [
 var overlayers = [
   {
     name: "Marker",
-    icon: '<i class="icon icon-water"></i>',
+    icon: '<i class="icon icon-bar"></i>',
     layer: marker
   }
 ];
