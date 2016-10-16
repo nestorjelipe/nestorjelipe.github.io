@@ -3,6 +3,10 @@ var myCenter = new L.LatLng(52.477, 13.422);
 
 var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 16, maxBounds: L.latLngBounds([[52.3068, 12.84302],[52.69636, 13.97736]]).pad(0.5)});
 
+var marker = new L.Marker(myCenter);
+    map.addLayer(marker);
+    marker.bindPopup("<b>I am a Marker </b><br>I could also be a statue");
+
 var baseLayers = [
   {
     name: "Light Map",
@@ -112,10 +116,6 @@ map.on('click', function(e) {
 /*var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     }).addTo(map);*/
-
-var marker = new L.Marker(myCenter);
-    map.addLayer(marker);
-    marker.bindPopup("<b>I am a Marker </b><br>I could also be a statue");
     
 var polygon = L.polygon([
       [52.48639, 13.42393],
