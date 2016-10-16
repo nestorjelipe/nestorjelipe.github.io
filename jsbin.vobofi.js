@@ -71,8 +71,8 @@ L.control.panelLayers(baseLayers, null, {
 
     console.log(node);
       
-    node.style.background = "url('"+url+"') no-repeat";
-    node.innerHTML = item.name;
+    node.style.background = "url('"+url+"') no-repeat top left";
+    node.innerHTML = item.name + " click me!";
 
     return node;
   }
