@@ -21,13 +21,12 @@ var baseLayers = [
   }
 ];
 
-/*var overlayers = [
+var overlayers = [
   {
     name: "Marker",
-    icon: '<i class="icon icon-water"></i>',
     layer: L.geoJson(marker)
   }
-];*/
+];
 
 /*var panelLayers = new L.Control.PanelLayers(baseLayers, null, {
   collapsed: true
@@ -35,7 +34,7 @@ var baseLayers = [
 
 map.addControl(panelLayers);*/
 
-L.control.panelLayers(baseLayers, null, {
+L.control.panelLayers(baseLayers, overlayers, {
   collapsed: true,
   buildItem: function(item) {
 
