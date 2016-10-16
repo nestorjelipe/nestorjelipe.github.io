@@ -71,8 +71,12 @@ L.control.panelLayers(baseLayers, null, {
 
     console.log(node);
       
-    node.style.background = "url('"+url+"') no-repeat top left";
-    node.innerHTML = item.name + " click me!";
+    if (url === 'http://a.basemaps.cartocdn.com/light_all/16/35211/26181.png') 
+      {node.style.background = 'url("leaflet-panel-layers-master/images/thumbnails/Lightmap_Mapbox.png") no-repeat top left';}
+    if (url === "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/256/16/35211/26181?access_token=pk.eyJ1IjoibmVzdG9yamVsaXBlIiwiYSI6ImNpb3dsdW4wbTAwN2t3ZGtqMDd2cGtlbjIifQ.v-kTLPHIgkXuobgi8kbZRw")
+      {node.style.background = 'url("leaflet-panel-layers-master/images/thumbnails/Satelite_Digital Globe.png") no-repeat top left';}
+
+    node.innerHTML = item.name;
 
     return node;
   }
