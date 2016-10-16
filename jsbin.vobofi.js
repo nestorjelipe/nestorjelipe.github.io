@@ -24,6 +24,7 @@ var baseLayers = [
 var overlayers = [
   {
     name: "Marker",
+    icon: '<i class="icon icon-water"></i>',
     layer: L.geoJson(marker)
   }
 ];
@@ -114,7 +115,7 @@ map.on('click', function(e) {
     }).addTo(map);*/
 
 var marker = new L.Marker(myCenter);
-    map.addLayer(marker);
+    /*map.addLayer(marker);*/
     marker.bindPopup("<b>I am a Marker </b><br>I could also be a statue");
     
 var polygon = L.polygon([
