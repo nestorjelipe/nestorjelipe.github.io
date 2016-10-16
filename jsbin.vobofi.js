@@ -4,7 +4,7 @@ var myCenter = new L.LatLng(52.477, 13.422);
 var map = new L.Map('map', {attributionControl: false, center: myCenter, zoom: 16, maxBounds: L.latLngBounds([[52.3068, 12.84302],[52.69636, 13.97736]]).pad(0.5)});
 
 var marker = new L.Marker(myCenter);
-    map.addLayer(marker);
+    /*map.addLayer(marker);*/
     marker.bindPopup("<b>I am a Marker </b><br>I could also be a statue");
 
 var baseLayers = [
